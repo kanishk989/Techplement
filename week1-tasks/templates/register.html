@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Register</h2>
+  <form method="POST" action="{{ url_for('register') }}">
+    {{ form.hidden_tag() }}
+    <div class="mb-3">
+      {{ form.firstname.label(class="form-label") }}<br>
+      {{ form.firstname(class="form-control") }}<br>
+      {% for error in form.firstname.errors %}
+        <span>{{ error }}</span>
+      {% endfor %}
+    </div>
+    <div class="mb-3">
+      {{ form.lastname.label(class="form-label") }}<br>
+      {{ form.lastname(class="form-control") }}<br>
+      {% for error in form.lastname.errors %}
+        <span>{{ error }}</span>
+      {% endfor %}
+    </div>
+    <div class="mb-3">
+      {{ form.username.label(class="form-label") }}<br>
+      {{ form.username(class="form-control") }}<br>
+      {% for error in form.username.errors %}
+        <span>{{ error }}</span>
+      {% endfor %}
+    </div>
+    <div class="mb-3">
+      {{ form.email.label(class="form-label") }}<br>
+      {{ form.email(class="form-control") }}<br>
+      {% for error in form.email.errors %}
+        <span>{{ error }}</span>
+      {% endfor %}
+    </div>
+    <div class="mb-3">
+      {{ form.contact.label(class="form-label") }}<br>
+      {{ form.contact(class="form-control") }}<br>
+      {% for error in form.contact.errors %}
+        <span>{{ error }}</span>
+      {% endfor %}
+    </div>
+    <div class="mb-3">
+      {{ form.password.label(class="form-label") }}<br>
+      {{ form.password(class="form-control") }}<br>
+      {% for error in form.password.errors %}
+        <span>{{ error }}</span>
+      {% endfor %}
+    </div>
+    <div class="mb-3">
+      {{ form.confirm_password.label(class="form-label") }}<br>
+      {{ form.confirm_password(class="form-control") }}<br>
+      {% for error in form.confirm_password.errors %}
+        <span>{{ error }}</span>
+      {% endfor %}
+    </div>
+    <div>
+      {{ form.submit(class="btn btn-primary") }}
+    </div>
+  </form>
+{% endblock %}
